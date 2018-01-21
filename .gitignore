@@ -1,0 +1,7 @@
+datadir/history
+datadir/geth/LOCK
+datadir/geth/nodekey
+datadir/geth/transactions.rlp
+datadir/geth/chaindata
+datadir/geth/lightchaindata
+datadir/geth/nodes
