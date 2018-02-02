@@ -135,8 +135,9 @@ contract MNT01Token is StandardToken {
 
   string public name = "Minerta01";
   string public symbol = "MN01";
-  uint256 public constant decimals = 3;
-  uint256 public constant valueInSat = 280;
+  uint256 public constant decimals = 0;
+  uint256 public constant valueInSat = 260;
+  mapping(address => string) btcWallets;
 
   /**
    * @dev Contructor that gives msg.sender all of existing tokens. 
@@ -148,4 +149,15 @@ contract MNT01Token is StandardToken {
     balances[msg.sender] = totalSupply;
   }
 
+  function setBtcDividendAddress(string btcAddress) {
+	  btcWallets[msg.sender] = btcAddress;
+  }
+
+//   function setBtcDividendAddressByCrowdsale(address ethAddress, string btcAddress) {
+// 	  btcWallets[ethAddress] = btcAddress;
+//   }
+
+  function btcAddress(address _owner) constant returns (string btcAddress) {
+    return btcWallets[_owner];
+  }
 }
